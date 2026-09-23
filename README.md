@@ -224,23 +224,7 @@ What is the conclusion of the paper?
 
 These questions demonstrate different query classifications and retrieval strategies.
 
-## Limitations
 
-* Query classification can sometimes be incorrect.
-* Vector search may retrieve partially relevant chunks.
-* Complex PDFs, tables, and scanned documents may not extract correctly.
-* Large contexts can increase LLM token usage.
-* Groq API rate limits may occur when making multiple LLM requests.
-
-## Future Improvements
-
-* Hybrid keyword + vector retrieval
-* Reranking
-* Better document section detection
-* Query rewriting
-* Multi-document support
-* Citation generation
-* Improved page-aware retrieval
 
 ## Summary
 
