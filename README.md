@@ -172,6 +172,18 @@ The abstract describes ...
 * **PyPDF** — PDF processing
 * **Google Colab** — Development environment
 
+  ## Models and Components
+
+| Component       | Model / Technology                       | Purpose                                                          |
+| --------------- | ---------------------------------------- | ---------------------------------------------------------------- |
+| LLM             | `openai/gpt-oss-120b` via Groq           | Query classification, retrieval decisions, and answer generation |
+| Embedding Model | `sentence-transformers/all-MiniLM-L6-v2` | Converts document chunks and queries into embeddings             |
+| Vector Database | `ChromaDB`                               | Stores embeddings and performs similarity search                 |
+| PDF Loader      | `PyPDFLoader`                            | Extracts text from PDF documents                                 |
+| API Framework   | `FastAPI`                                | Provides the backend API and web interface                       |
+| Server          | `Uvicorn`                                | Runs the FastAPI application                                     |
+
+
 ## Installation
 
 Install the required packages in Google Colab:
@@ -224,6 +236,20 @@ What is the conclusion of the paper?
 
 These questions demonstrate different query classifications and retrieval strategies.
 
+## FastAPI Endpoints
+
+| Method | Endpoint  | Purpose                                                                      |
+| ------ | --------- | ---------------------------------------------------------------------------- |
+| `GET`  | `/`       | Opens and displays the Adaptive RAG web interface.                           |
+| `POST` | `/ask`    | Sends the user's question to the Adaptive RAG system and returns the result. |
+| `GET`  | `/health` | Checks whether the FastAPI server is running.                                |
+
+### GET vs POST
+
+| Method | Purpose                                                  |
+| ------ | -------------------------------------------------------- |
+| `GET`  | Used to request or retrieve information from the server. |
+| `POST` | Used to send data to the server for processing.          |
 
 
 ## Summary
